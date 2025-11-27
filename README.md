@@ -22,11 +22,11 @@ gem "screenkit-tts-google"
 ## Usage
 
 When calling [screenkit](https://github.com/fnando/screenkit), you must provide
-a JSON file that starts with `google` in its name (e.g. `google.json`,
-`google-credentials.json`, etc).
+a your credentials JSON file prefixed by `google:` (e.g.
+`google:credentials.json`).
 
 ```base
-screenkit episode export --dir episodes/001* --api-key google.json
+screenkit episode export --dir episodes/001* --api-key "google:credentials.json"
 ```
 
 Then, add the following to your ScreenKit configuration:

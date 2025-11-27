@@ -23,7 +23,7 @@ module ScreenKit
       end
 
       def self.available?(api_key: nil, **)
-        api_key && File.basename(api_key).match?(/^google.*\.json$/)
+        api_key.to_s.start_with?(api_key_prefix)
       end
 
       # This method is required.
