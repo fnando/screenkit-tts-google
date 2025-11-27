@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "https://screenkit.dev/schemas/tts/google.json",
+  "title": "The Apple `say` voice engine options",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "A unique identifier for the tts configuration"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "engine": {
+      "type": "string",
+      "enum": ["google"],
+      "description": "The TTS engine to use"
+    },
+    "input": {
+      "type": "object",
+      "properties": {
+        "custom_proununciations": {
+          "type": "object",
+          "properties": {
+            "pronunciations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "phrase": {
+                    "type": "string"
+                  },
+                  "phonetic_encoding": {
+                    "type": "string",
+                    "enum": [
+                      "PHONETIC_ENCODING_UNSPECIFIED",
+                      "PHONETIC_ENCODING_IPA",
+                      "PHONETIC_ENCODING_X_SAMPA",
+                      "PHONETIC_ENCODING_JAPANESE_YOMIGANA",
+                      "PHONETIC_ENCODING_PINYIN"
+                    ]
+                  },
+                  "pronunciation": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "voice": {
+      "description": "The voice configuraiton",
+      "type": "object",
+      "properties": {
+        "language_code": {
+          "type": "string",
+          "description": "The language code of the voice"
+        },
+        "ssml_gender": {
+          "type": "string",
+          "enum": ["FEMALE", "MALE", "NEUTRAL"]
+        },
+        "model_name": {
+          "type": "string"
+        }
+      }
+    },
+    "audio_config": {
+      "description": "The audio configuraiton",
+      "type": "object",
+      "properties": {
+        "audio_encoding": {
+          "type": "string",
+          "enum": ["MP3", "PCM", "M4A", "OGG_OPUS", "LINEAR16", "MULAW", "ALAW"]
+        },
+        "speaking_rate": {
+          "type": "number"
+        },
+        "pitch": {
+          "type": "number"
+        },
+        "volume_gain_db": {
+          "type": "number"
+        },
+        "sampleRateHertz": {
+          "type": "integer"
+        },
+        "effects_profile_id": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
