@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "lib/screenkit/tts/google"
-
 Gem::Specification.new do |spec|
   spec.name    = "screenkit-tts-google"
-  spec.version = ScreenKit::TTS::Google::VERSION
+  spec.version = "0.0.1"
   spec.authors = ["Nando Vieira"]
   spec.email   = ["me@fnando.com"]
   spec.metadata = {"rubygems_mfa_required" => "true"}

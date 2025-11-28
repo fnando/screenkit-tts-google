@@ -4,8 +4,6 @@ require "screenkit/tts/base"
 require "google/cloud/text_to_speech"
 
 module ScreenKit
-  require_relative "google/version"
-
   EXTENSION = {
     "MP3" => ".mp3",
     "PCM" => ".pcm",
